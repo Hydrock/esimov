@@ -143,6 +143,10 @@ module.exports = {
           /\.gif$/,
           /\.jpe?g$/,
           /\.png$/,
+          /\.woff$/,
+          /\.woff2$/,
+          /\.ttf$/,
+          /\.eot$/,
         ],
         loader: require.resolve('file-loader'),
         options: {
@@ -210,9 +214,15 @@ module.exports = {
           {
             loader: require.resolve('sass-loader'),
           },
-          
         ],
       },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        loader: require.resolve('file-loader'),
+        options: {
+          name: 'fonts/[name].[ext]',
+        },
+      }
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],

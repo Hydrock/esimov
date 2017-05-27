@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import styles from'./App.css';
+import './App.css';
+
+import './assets/fonts/fonts.scss';
 
 import MainContainer from './components/main-container'
 
 class App extends Component {
   render() {
     return (
-      <div className={styles.app}>
+      <div className='app'>
         {/* <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>

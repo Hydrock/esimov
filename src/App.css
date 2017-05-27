@@ -1,6 +1,14 @@
-.app {
-  min-height: 100%;
+:global {
+  .app {
+    min-height: 100%;
+  }
+  body {
+    background-color: skyblue;
+    font-family: 'Barrio'!important;
+    font-size: 300px;
+  }
 }
+
 
 /*.App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -22,3 +30,5 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }*/
+
+
