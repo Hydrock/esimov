@@ -6,7 +6,7 @@ class MainContainer extends Component {
     console.log(style)
     return (
       <div className={style.container}>
-        asfasfasfsaf
+        
       </div>
     );
   }

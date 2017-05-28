@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import './assets/fonts/fonts.scss';
-
+import MainMenu from './components/main-menu'
+import Logo from './components/logo'
 import MainContainer from './components/main-container'
+
+import './assets/fonts/fonts.scss';
 
 class App extends Component {
   render() {
@@ -17,6 +19,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */ }
         <MainContainer/>
+        <Logo/>
+        <MainMenu/>
       </div>
     );
   }

@@ -1,11 +1,10 @@
 :global {
   .app {
-    min-height: 100%;
+    min-height: 100vh;
   }
   body {
-    background-color: skyblue;
+    background-color: #000;
     font-family: 'Barrio'!important;
-    font-size: 300px;
   }
 }
 
