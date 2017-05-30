@@ -1,5 +1,17 @@
 .container {
   min-height: 100vh;
-  background-image: url(../../assets/img/other/img.jpg);
   background-size: cover;
+  background-position: center;
+}
+
+.bg-1 {
+  background-image: url(../../assets/img/other/img-1.jpg);
+}
+
+.bg-2 {
+  background-image: url(../../assets/img/other/img-2.jpg);
+}
+
+.bg-3 {
+  background-image: url(../../assets/img/other/img-3.jpg);
 }
