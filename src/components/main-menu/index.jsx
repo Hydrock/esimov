@@ -8,22 +8,22 @@ class MainMenu extends Component {
         <nav className={style.mainNav}>
           <ul className={style.mainNavUl}>
             <li className={style.mainNavUlItem}>
-              <a href='#' className={style.mainNavLink}>
+              <a href='#1' className={style.mainNavLink}>
                 прайс
               </a>
             </li>
             <li className={style.mainNavUlItem}>
-              <a href='#' className={style.mainNavLink}>
+              <a href='#2' className={style.mainNavLink}>
                 портфолио
               </a>
             </li>
             <li className={style.mainNavUlItem}>
-              <a href='#' className={style.mainNavLink}>
+              <a href='#3' className={style.mainNavLink}>
                 календарь
               </a>
             </li>
             <li className={style.mainNavUlItem}>
-              <a href='#' className={style.mainNavLink}>
+              <a href='#4' className={style.mainNavLink}>
                 контакты
               </a>
             </li>

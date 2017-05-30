@@ -4,6 +4,8 @@ import './App.css';
 import MainMenu from './components/main-menu'
 import Logo from './components/logo'
 import MainContainer from './components/main-container'
+import MainSlider from './components/main-slider'
+import Curtain from './components/curtain'
 
 import './assets/fonts/fonts.scss';
 
@@ -18,9 +20,10 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */ }
-        <MainContainer/>
+        <MainSlider/>
         <Logo/>
         <MainMenu/>
+        <Curtain/>
       </div>
     );
   }
