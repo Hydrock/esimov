@@ -23,7 +23,6 @@ export default class Curtain extends Component {
   render () {
     return (
       <div className={style.container} onClick={this.setOpenState}>
-        <div className={style.modal}></div>
         <div className={classnames(style.transitionLayer, style.visible, this.setAnimationClass())}>
             <div className={style.layer}></div>
         </div>
