@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import style from './style.scss'
 
 class Logo extends Component {
   render() {
     return (
-      <div className={style.logo}></div>
+      <Link to="/" className={style.logo}/>
     );
   }
 }

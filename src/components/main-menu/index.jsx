@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import style from './style.scss'
 
 class MainMenu extends Component {
@@ -18,9 +19,9 @@ class MainMenu extends Component {
               </a>
             </li>
             <li className={style.mainNavUlItem}>
-              <a href='#3' className={style.mainNavLink}>
+              <Link to="/calendar" className={style.mainNavLink}>
                 календарь
-              </a>
+              </Link>
             </li>
             <li className={style.mainNavUlItem}>
               <a href='#4' className={style.mainNavLink}>
