@@ -1,0 +1,12 @@
+.title {
+  font-family: 'Fregat';
+  font-style: bold;
+  font-size: 36px;
+  color: white;
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  z-index: 2;
+}

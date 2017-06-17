@@ -57,11 +57,11 @@
 }
 
 .transitionLayer.opening .layer {
-    animation: sprite 0.8s steps(24);
+    animation: sprite 1s steps(24);
     animation-fill-mode: forwards;
 }
 
 .transitionLayer.closing .layer {
-    animation: spriteReverse 0.8s steps(24);
+    animation: spriteReverse 1s steps(24);
     animation-fill-mode: forwards;
 }
