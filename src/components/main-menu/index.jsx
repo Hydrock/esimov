@@ -29,9 +29,9 @@ class MainMenu extends Component {
               </Link>
             </li>
             <li className={style.mainNavUlItem}>
-              <a href='#4' className={style.mainNavLink}>
+              <Link to="/contacts" className={style.mainNavLink}>
                 контакты
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

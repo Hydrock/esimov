@@ -5,6 +5,7 @@ import style from './style.scss'
 
 import AllStories from '../pages/stories/all-stories'
 import Calendar from '../pages/calendar'
+import Contacts from '../pages/contacts'
 
 class MainContainer extends Component {
   render() {
@@ -14,6 +15,7 @@ class MainContainer extends Component {
             <Route path="/"/>
             <Route path="/stories" component={AllStories}/>
             <Route path="/calendar" component={Calendar}/>
+            <Route path="/contacts" component={Contacts}/>
           </Scrollbars>
         </div>
     );
