@@ -1,9 +1,5 @@
-import { h, Component } from 'preact';
-
+import React, { Component } from 'react';
 import style from './style.scss'
-
-// Tell Babel to transform JSX into h() calls:
-/** @jsx h */
 
 export default class Contacts extends Component {
   render() {
