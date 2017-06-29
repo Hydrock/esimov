@@ -2,6 +2,9 @@
   #root {
     min-height: 100%;
   }
+  .iframe-calendar iframe body {
+    display: none!important;
+  }
 }
 
 html, body {
