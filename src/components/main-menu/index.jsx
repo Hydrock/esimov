@@ -19,9 +19,9 @@ class MainMenu extends Component {
               </a>
             </li>
             <li className={style.mainNavUlItem}>
-              <a href='/stories' className={style.mainNavLink}>
+              <Link to='/stories' className={style.mainNavLink}>
                 истории
-              </a>
+              </Link>
             </li>
             <li className={style.mainNavUlItem}>
               <Link to="/calendar" className={style.mainNavLink}>
