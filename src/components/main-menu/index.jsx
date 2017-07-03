@@ -9,14 +9,14 @@ class MainMenu extends Component {
         <nav className={style.mainNav}>
           <ul className={style.mainNavUl}>
             <li className={style.mainNavUlItem}>
-              <a href='#1' className={style.mainNavLink}>
+              <Link to='/prices' className={style.mainNavLink}>
                 прайс
-              </a>
+              </Link>
             </li>
             <li className={style.mainNavUlItem}>
-              <a href='#2' className={style.mainNavLink}>
+              <Link to='/portfolio' className={style.mainNavLink}>
                 портфолио
-              </a>
+              </Link>
             </li>
             <li className={style.mainNavUlItem}>
               <Link to='/stories' className={style.mainNavLink}>
