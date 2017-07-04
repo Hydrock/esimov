@@ -3,9 +3,7 @@ import Title from '../../common/title'
 
 import style from './style.scss'
 
-//import overlayImg from '../../../../src/assets/img/other/black_overlay.png'
-
-//import overlayImg from './assets/img/other/black_overlay.png'
+import storyImg from '@src/assets/img/other/story.jpg'
 
 export default class Contacts extends Component {
   render() {
@@ -17,7 +15,10 @@ export default class Contacts extends Component {
             
           </div>
           <div className={style.imageContainer}>
-            
+            <img
+              src={storyImg}
+              alt=''
+            />
           </div>
         </div>
       </div>

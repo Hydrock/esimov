@@ -12,6 +12,8 @@ import { Provider } from 'react-redux'
 
 import store from './store.js'
 
+console.log(process.env.PUBLIC_URL + 'dsgf')
+
 class App extends Component {
   render() {
     return (
