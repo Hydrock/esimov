@@ -3,12 +3,12 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { Route } from 'react-router-dom'
 import style from './style.scss'
 
-import AllStories from '../pages/stories/all-stories'
-import Story from '../pages/stories/story'
-import Calendar from '../pages/calendar'
-import Contacts from '../pages/contacts'
-import Prices from '../pages/prices'
-import Portfolio from '../pages/portfolio'
+import AllStories from '@src/components/pages/stories/all-stories'
+import Story from '@src/components/pages/stories/story'
+import Calendar from '@src/components/pages/calendar'
+import Contacts from '@src/components/pages/contacts'
+import Prices from '@src/components/pages/prices'
+import Portfolio from '@src/components/pages/portfolio'
 
 class MainContainer extends Component {
   render() {

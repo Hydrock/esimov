@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
 import style from './style.scss'
-
-import img from '../../../../../src/assets/img/other/title.png'
-import storyImg from '../../../../../src/assets/img/other/story.jpg'
-import overlayImg from '../../../../../src/assets/img/other/black_overlay.png'
+import img from '@src/assets/img/other/title.png'
+import storyImg from '@src/assets/img/other/story.jpg'
+import overlayImg from '@src/assets/img/other/black_overlay.png'
 
 export default class Card extends Component {
   render() {

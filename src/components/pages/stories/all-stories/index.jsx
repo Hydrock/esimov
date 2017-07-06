@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
-import style from './style.scss'
-
 import Card from './card'
-import Title from '../../../common/title'
+import Title from '@src/components/common/title'
+import style from './style.scss'
 
 export default class AllStories extends Component {
   render() {

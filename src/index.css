@@ -7,6 +7,16 @@
   }
 }
 
+:global {
+  .app {
+    height: 100vh;
+  }
+  body {
+    font-family: 'Fregat'!important;
+    background-color: #000;
+  }
+}
+
 html, body {
   width: 100%;
   min-height: 100%;
