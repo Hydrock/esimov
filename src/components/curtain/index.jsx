@@ -3,6 +3,7 @@ import store from '@src/store.js'
 import { connect } from 'react-redux'
 import style from './style.scss'
 import classnames from 'classnames'
+import { withRouter } from 'react-router-dom'
 
 class Curtain extends Component {
   constructor(props) {
@@ -13,10 +14,15 @@ class Curtain extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
+    const history = this.props.history
+    console.log(history)
     if (nextProps.loadState == 'loading') {
       this.setOpenStateTrue()
-      setTimeout(() => {this.setOpenStateFalse()}, 2000)
+      setTimeout(() => {
+        store.dispatch({ type: 'SET_LOAD', obj: { loadState: 'loaded' } })
+        history.push(nextProps.path)
+        this.setOpenStateFalse()
+      }, 1000)
     }
   }
 
@@ -43,7 +49,6 @@ class Curtain extends Component {
   }
 
   render () {
-    console.log(this.props.loadState)
     return (
       <div className={style.container} onClick={this.setOpenState}>
         <div className={classnames(style.transitionLayer, style.visible, this.setAnimationClass())}>
@@ -56,8 +61,9 @@ class Curtain extends Component {
 
 function mapStateToProps(state) {
   return {
-    loadState: state.loadState
+    loadState: state.loadState,
+    path: state.path
   }
 }
 
-export default connect(mapStateToProps)(Curtain)
+export default withRouter(connect(mapStateToProps)(Curtain))

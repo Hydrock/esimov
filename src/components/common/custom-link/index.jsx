@@ -10,7 +10,7 @@ class CustomLink extends Component {
     const to = this.props.to
     e.preventDefault()
     store.dispatch({ type: 'SET_LOAD', obj: { loadState: 'loading' } })
-    store.dispatch({ type: 'SET_PATH', obj: { path: to } })
+    store.dispatch({ type: 'SET_PATH', obj: { path: this.props.to } })
     //history.push(to)
   }
   render () {
