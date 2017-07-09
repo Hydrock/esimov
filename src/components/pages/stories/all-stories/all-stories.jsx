@@ -3,6 +3,8 @@ import Card from './card'
 import Title from '@src/components/common/title'
 import style from './style.scss'
 
+import CustomLink from '@src/components/common/custom-link'
+
 export default class AllStories extends Component {
   render() {
     return (
@@ -14,6 +16,7 @@ export default class AllStories extends Component {
           <Card/>
           <Card/>
           <Card/>
+          <CustomLink to="/prices" />
         </div>
       </div>
     );
