@@ -20,6 +20,9 @@ $transition: all .3s;
     left: 0;
     background: linear-gradient(to top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 58%,rgba(0,0,0,1) 79%,rgba(0,0,0,1) 100%);
     z-index: 2;
+    user-select: none;
+    touch-action: none;
+    pointer-events: none;
   }
 }
 
