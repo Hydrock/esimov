@@ -3,7 +3,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { Route } from 'react-router-dom'
 import style from './style.scss'
 
-import AllStories from '@src/components/pages/stories/all-stories'
+import LoadableAllStories from '@src/components/pages/stories/all-stories'
 import Story from '@src/components/pages/stories/story'
 import Calendar from '@src/components/pages/calendar'
 import Contacts from '@src/components/pages/contacts'
@@ -16,7 +16,7 @@ class MainContainer extends Component {
       <div className={style.container}>
         <Scrollbars>
           <Route path="/"/>
-          <Route exact path="/stories" component={AllStories} />
+          <Route exact path="/stories" component={LoadableAllStories} />
           <Route exact path="/stories/story" component={Story} />
           <Route path="/calendar" component={Calendar}/>
           <Route path="/contacts" component={Contacts}/>

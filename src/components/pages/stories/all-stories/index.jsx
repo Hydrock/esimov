@@ -1,21 +1,13 @@
-import React, { Component } from 'react';
-import Card from './card'
-import Title from '@src/components/common/title'
-import style from './style.scss'
+import React, { Component } from 'react'
+import Loadable from 'react-loadable'
 
-export default class AllStories extends Component {
+const LoadableComponent = Loadable({
+  loader: () => import('./all-stories'),
+  loading: () => null
+})
+
+export default class LoadableAllStories extends Component {
   render() {
-    return (
-      <div className={style.container}>
-        <Title text={'истории'}/>
-        <div className={style.content}>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-        </div>
-      </div>
-    );
+    return <LoadableComponent/>
   }
 }
