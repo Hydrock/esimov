@@ -16,7 +16,7 @@ export default class AllStories extends Component {
           <Card/>
           <Card/>
           <Card/>
-          <CustomLink to="/prices" />
+          <CustomLink to='/prices' text='Ссылка'/>
         </div>
       </div>
     );

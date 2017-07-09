@@ -15,8 +15,8 @@ class Curtain extends Component {
 
   componentWillReceiveProps(nextProps) {
     const history = this.props.history
-    console.log(history)
-    if (nextProps.loadState == 'loading') {
+    //console.log(history)
+    if (nextProps.loadState === 'loading') {
       this.setOpenStateTrue()
       setTimeout(() => {
         store.dispatch({ type: 'SET_LOAD', obj: { loadState: 'loaded' } })
