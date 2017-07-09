@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import store from '@src/store.js'
+import { connect } from 'react-redux'
 import style from './style.scss'
 import classnames from 'classnames'
 
-export default class Curtain extends Component {
+class Curtain extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,9 +12,29 @@ export default class Curtain extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+    if (nextProps.loadState == 'loading') {
+      this.setOpenStateTrue()
+      setTimeout(() => {this.setOpenStateFalse()}, 2000)
+    }
+  }
+
+  setOpenStateTrue = () => {
+    this.setState(previousState => {
+      return { opening: true }
+    })
+  }
+
+  setOpenStateFalse = () => {
+    this.setState(previousState => {
+      return { opening: false }
+    })
+  }
+
   setOpenState = () => {
     this.setState(previousState => {
-      return { opening: !previousState.opening };
+      return { opening: !previousState.opening }
     })
   }
 
@@ -21,6 +43,7 @@ export default class Curtain extends Component {
   }
 
   render () {
+    console.log(this.props.loadState)
     return (
       <div className={style.container} onClick={this.setOpenState}>
         <div className={classnames(style.transitionLayer, style.visible, this.setAnimationClass())}>
@@ -30,3 +53,11 @@ export default class Curtain extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    loadState: state.loadState
+  }
+}
+
+export default connect(mapStateToProps)(Curtain)
