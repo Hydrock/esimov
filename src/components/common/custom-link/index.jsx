@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom'
 import style from './style.scss'
 
@@ -21,5 +22,12 @@ class CustomLink extends Component {
     )
   }
 }
+
+CustomLink.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  to: PropTypes.string.isRequired
+};
 
 export default withRouter(CustomLink);
