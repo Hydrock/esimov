@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import store from '@src/store.js'
+import { connect } from 'react-redux'
+import CustomLink from '@src/components/common/custom-link'
+import classnames from 'classnames'
 import style from './style.scss'
 
-import CustomLink from '@src/components/common/custom-link'
-
 class MainMenu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      opened: false,
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState(previousState => {
+      return { opened: nextProps.menuOpened }
+    })
+  }
+
   render() {
+    const containerClassName = classnames(style.container, {
+      [style.opened]: this.state.opened
+    })
     return (
-      <div className={style.container}>
+      <div className={containerClassName}>
         <nav className={style.mainNav}>
           <ul className={style.mainNavUl}>
             <li className={style.mainNavUlItem}>
@@ -47,4 +64,10 @@ class MainMenu extends Component {
   }
 }
 
-export default MainMenu;
+function mapStateToProps(state) {
+  return {
+    menuOpened: state.menuOpened
+  }
+}
+
+export default connect(mapStateToProps)(MainMenu)

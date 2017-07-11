@@ -20,6 +20,7 @@ class Curtain extends Component {
       this.setOpenStateTrue()
       setTimeout(() => {
         store.dispatch({ type: 'SET_LOAD', obj: { loadState: 'loaded' } })
+        store.dispatch({ type: 'TOGGLE_MENU', obj: { menuOpened: false } })
         history.push(nextProps.path)
         this.setOpenStateFalse()
       }, 1000)

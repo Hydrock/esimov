@@ -5,6 +5,7 @@ import Logo from '@src/components/logo'
 import MainContainer from '@src/components/main-container'
 import MainSlider from '@src/components/main-slider'
 import Curtain from '@src/components/curtain'
+import MobileMenuButton from '@src/components/common/mobile-menu-button'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store.js'
@@ -19,6 +20,7 @@ class App extends Component {
             <Logo/>
             <MainContainer/>
             <MainMenu/>
+            <MobileMenuButton/>
             <Curtain/>
           </div>
         </Router>

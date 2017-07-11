@@ -1,0 +1,5 @@
+@mixin media-phones {
+  @media only screen and (max-width: 680px) {
+    @content;
+  }
+}

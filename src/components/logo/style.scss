@@ -1,3 +1,5 @@
+@import '../../styles/media-mixins.scss';
+
 .logo {
   width: 206px;
   height: 116px;
@@ -6,6 +8,17 @@
   left: 68px;
   background-image: url(../../assets/img/logo/esimov.png);
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   filter: brightness(0) invert(1);
   z-index: 1000;
+}
+
+@include media-phones {
+  .logo {
+    width: 90px;
+    height: 50px;
+    top: 20px;
+    left: 20px;
+  }
 }

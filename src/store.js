@@ -8,6 +8,8 @@ const store = createStore((store = {}, action) => {
     return Object.assign({}, store, action.obj);
   } else if (action.type === 'SET_PATH') {
     return Object.assign({}, store, action.obj);
+  } else if (action.type === 'TOGGLE_MENU') {
+    return Object.assign({}, store, action.obj);
   } else {
     return store
   }
