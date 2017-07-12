@@ -10,6 +10,8 @@
 :global {
   .app {
     height: 100vh;
+    overflow: hidden;
+    position: relative;
   }
   body {
     font-family: 'Fregat'!important;
