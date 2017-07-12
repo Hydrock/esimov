@@ -17,9 +17,9 @@ export default class MainMenu extends Component {
     })
   }
 
-  renderLinks (item) {
+  renderLinks (item, i) {
     return (
-      <li className={style.mainNavUlItem}>
+      <li className={style.mainNavUlItem} key={i}>
         <CustomLink to={item.to} text={item.text} className={style.mainNavLink}/>
       </li>
     )
