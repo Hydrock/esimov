@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import store from '@src/store.js'
-import { connect } from 'react-redux'
 import style from './style.scss'
 import classnames from 'classnames'
-import { withRouter } from 'react-router-dom'
 
-class Curtain extends Component {
+export default class Curtain extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +13,6 @@ class Curtain extends Component {
 
   componentWillReceiveProps(nextProps) {
     const history = this.props.history
-    //console.log(history)
     if (nextProps.loadState === 'loading') {
       this.setOpenStateTrue()
       setTimeout(() => {
@@ -59,12 +56,3 @@ class Curtain extends Component {
     )
   }
 }
-
-function mapStateToProps(state) {
-  return {
-    loadState: state.loadState,
-    path: state.path
-  }
-}
-
-export default withRouter(connect(mapStateToProps)(Curtain))

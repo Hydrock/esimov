@@ -1,17 +1,39 @@
 import React, { Component } from 'react';
 import '@src/assets/fonts/fonts.scss';
-import MainMenu from '@src/components/main-menu'
+import MainMenu from '@src/containers/main-menu'
 import Logo from '@src/components/logo'
 import MainContainer from '@src/components/main-container'
 import MainSlider from '@src/components/main-slider'
-import Curtain from '@src/components/curtain'
-import MobileMenuButton from '@src/components/common/mobile-menu-button'
+import Curtain from '@src/containers/curtain'
+import MobileMenuButton from '@src/containers/mobile-menu-button'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store.js'
 
 class App extends Component {
   render() {
+    const menuItems = [
+      {
+        to: '/prices',
+        text: 'прайс'
+      },
+      {
+        to: '/portfolio',
+        text: 'портфолио'
+      },
+      {
+        to: '/stories',
+        text: 'истории'
+      },
+      {
+        to: '/calendar',
+        text: 'календарь'
+      },
+      {
+        to: '/contacts',
+        text: 'контакты'
+      }
+    ]
     return (
       <Provider store={store}>
         <Router>
@@ -19,7 +41,7 @@ class App extends Component {
             <MainSlider/>
             <Logo/>
             <MainContainer/>
-            <MainMenu/>
+            <MainMenu items={menuItems} />
             <MobileMenuButton/>
             <Curtain/>
           </div>
