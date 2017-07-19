@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import store from '@src/store.js'
 import style from './style.scss'
 import classnames from 'classnames'
+
+import * as actions from '@src/actions/index.js'
 
 export default class Curtain extends Component {
   constructor(props) {
@@ -16,8 +17,8 @@ export default class Curtain extends Component {
     if (nextProps.loadState === 'loading') {
       this.setOpenStateTrue()
       setTimeout(() => {
-        store.dispatch({ type: 'SET_LOAD', obj: { loadState: 'loaded' } })
-        store.dispatch({ type: 'TOGGLE_MENU', obj: { menuOpened: false } })
+        actions.setLoad('loaded')
+        actions.toggleMenu(false)
         history.push(nextProps.path)
         this.setOpenStateFalse()
       }, 1000)

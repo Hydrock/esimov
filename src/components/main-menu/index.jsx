@@ -13,7 +13,7 @@ export default class MainMenu extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState(previousState => {
-      return { opened: nextProps.menuOpened }
+      return { opened: nextProps.opened }
     })
   }
 

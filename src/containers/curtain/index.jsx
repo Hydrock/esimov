@@ -4,8 +4,8 @@ import { withRouter } from 'react-router-dom'
 
 function mapStateToProps(state) {
   return {
-    loadState: state.loadState,
-    path: state.path
+    loadState: state.load.loadState,
+    path: state.path.path
   }
 }
 

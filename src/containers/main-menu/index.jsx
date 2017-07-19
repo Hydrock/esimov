@@ -3,7 +3,7 @@ import MainMenu from '@src/components/main-menu'
 
 function mapStateToProps(state) {
   return {
-    menuOpened: state.menuOpened
+    opened: state.menuState.opened
   }
 }
 

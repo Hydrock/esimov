@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import store from '@src/store.js'
 import styles from './styles.scss'
+import * as actions from '@src/actions/index.js'
 
 export default class MobileMenuButton extends Component {
   toggleMenu = () => {
-    store.dispatch({ type: 'TOGGLE_MENU', obj: { menuOpened: !this.props.menuOpened } })
+    actions.toggleMenu(!this.props.opened)
   }
 
   render () {

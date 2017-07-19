@@ -3,7 +3,7 @@ import MobileMenuButton from '@src/components/common/mobile-menu-button'
 
 function mapStateToProps(state) {
   return {
-    menuOpened: state.menuOpened
+    opened: state.menuState.opened
   }
 }
 

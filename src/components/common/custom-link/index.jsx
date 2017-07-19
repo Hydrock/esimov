@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import store from '@src/store.js'
 import style from './style.scss'
+
+import * as actions from '@src/actions/index.js'
 
 class CustomLink extends Component {
   setPath = (e) => {
     e.preventDefault()
-    store.dispatch({ type: 'SET_LOAD', obj: { loadState: 'loading' } })
-    store.dispatch({ type: 'SET_PATH', obj: { path: this.props.to } })
+    actions.setLoad('loading')
+    actions.setPath(this.props.to)
   }
   render () {
     return (
