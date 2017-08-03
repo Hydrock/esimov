@@ -1,11 +1,7 @@
-import { h, render, Component } from 'preact';
+import { h, Component } from 'preact';
 
-class Clock extends Component {
-    render() {
-        let time = new Date().toLocaleTimeString();
-        return <span>{ time }</span>;
-    }
+export default class App extends Component {
+  render () {
+    return <span>sfdsddddddffsff</span>;
+  }
 }
-
-// render an instance of Clock into <body>:
-render(<Clock />, document.body);
