@@ -11,10 +11,6 @@ import { Provider } from 'react-redux'
 import store from '@src/store.js'
 
 class App extends Component {
-  ooop = () => {
-    var x = 10;
-  }
-
   render() {
     const menuItems = [
       {
