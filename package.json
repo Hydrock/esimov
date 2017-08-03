@@ -1,0 +1,13 @@
+{
+  "name": "esimov",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "repository": "git@github.com:Hydrock/esimov.git",
+  "author": "Hydrock <hydrock74@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}
