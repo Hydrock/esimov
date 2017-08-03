@@ -1,4 +1,6 @@
-import { h, render, Component } from 'preact';
+import "babel-polyfill";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from '@src/app.jsx'
 
-render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));

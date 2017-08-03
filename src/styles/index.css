@@ -1,0 +1,31 @@
+:global {
+  #root {
+    min-height: 100%;
+  }
+  .iframe-calendar iframe body {
+    display: none!important;
+  }
+}
+
+:global {
+  .app {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  body {
+    font-family: 'Fregat'!important;
+    background-color: #000;
+  }
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}

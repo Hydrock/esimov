@@ -1,7 +1,58 @@
-import { h, Component } from 'preact';
+import React, { Component } from 'react';
+import '@src/assets/fonts/fonts.scss';
+import MainMenu from '@src/containers/main-menu'
+import Logo from '@src/components/logo'
+import MainContainer from '@src/components/main-container'
+import MainSlider from '@src/components/main-slider'
+import Curtain from '@src/containers/curtain'
+import MobileMenuButton from '@src/containers/mobile-menu-button'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from '@src/store.js'
 
-export default class App extends Component {
-  render () {
-    return <span>sfdsddddddffsff</span>;
+class App extends Component {
+  ooop = () => {
+    var x = 10;
+  }
+
+  render() {
+    const menuItems = [
+      {
+        to: '/prices',
+        text: 'прайс'
+      },
+      {
+        to: '/portfolio',
+        text: 'портфолио'
+      },
+      {
+        to: '/stories',
+        text: 'истории'
+      },
+      {
+        to: '/calendar',
+        text: 'календарь'
+      },
+      {
+        to: '/contacts',
+        text: 'контакты'
+      }
+    ]
+    return (
+      <Provider store={store}>
+        <Router>
+          <div className='app'>
+            <MainSlider/>
+            <Logo/>
+            <MainContainer/>
+            <MainMenu items={menuItems} />
+            <MobileMenuButton/>
+            <Curtain/>
+          </div>
+        </Router>
+      </Provider>
+    );
   }
 }
+
+export default App;
