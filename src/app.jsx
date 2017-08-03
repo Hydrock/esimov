@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '@src/assets/fonts/fonts.scss';
+import '@src/styles/global.scss'
 import MainMenu from '@src/containers/main-menu'
 import Logo from '@src/components/logo'
 import MainContainer from '@src/components/main-container'

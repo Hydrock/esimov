@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const autoprefixer = require('autoprefixer');
 require("babel-polyfill");
 
@@ -138,47 +139,57 @@ var build = {
           },
         ],
       },
+      // prod
       {
-        test: /(\.js|\.jsx)$/,
+        test: /\.(js|jsx)$/,
         exclude:path.resolve(__dirname, "node_modules"),
         use: 'babel-loader'
       },
+      // prod
       {
         test: [/\.css$/, /\.scss$/],
-        use: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+        use: ExtractTextPlugin.extract({
+          fallback: require.resolve('style-loader'),
+          use: [
+            {
+              loader: require.resolve('css-loader'),
+              // options: {
+              //   modules: true,
+              //   localIdentName: '[name]__[local]___[hash:base64:5]',
+              // }
+              options: {
+                modules: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                minimize: true,
+                sourceMap: false,
+              },
             },
-          },
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [
-                require('postcss-flexbugs-fixes'),
-                autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9', // React doesn't support IE8 anyway
-                  ],
-                  flexbox: 'no-2009',
-                }),
-              ],
+            {
+              loader: require.resolve('postcss-loader'),
+              options: {
+                ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+                plugins: () => [
+                  require('postcss-flexbugs-fixes'),
+                  autoprefixer({
+                    browsers: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9', // React doesn't support IE8 anyway
+                    ],
+                    flexbox: 'no-2009',
+                  }),
+                ],
+              },
             },
-          },
-          {
-            loader: require.resolve('sass-loader'),
-            options: {
-              includePaths: ['./src/styles']
+            {
+              loader: require.resolve('sass-loader'),
+              options: {
+                includePaths: ['./src/styles']
+              },
             },
-          },
-        ],
+          ]
+        })
       },
       {
         test: /\.(ttf|eot|woff|woff2)$/,
@@ -207,6 +218,7 @@ var build = {
       inject: true,
       template: './template/index.html',
     }),
+    new ExtractTextPlugin("styles.css")
   ]
 };
 

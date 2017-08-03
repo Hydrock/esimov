@@ -11,7 +11,7 @@ export default class MobileMenuButton extends Component {
     return (
       <div 
         className={styles.button}
-        onClick={this.toggleMenu}
+        onClick={this.toggleMenu.bind(this)}
       />
     )
   }
