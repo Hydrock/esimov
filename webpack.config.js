@@ -153,10 +153,6 @@ var build = {
           use: [
             {
               loader: require.resolve('css-loader'),
-              // options: {
-              //   modules: true,
-              //   localIdentName: '[name]__[local]___[hash:base64:5]',
-              // }
               options: {
                 modules: true,
                 localIdentName: '[name]__[local]___[hash:base64:5]',
@@ -214,6 +210,18 @@ var build = {
     port: 9000
   },
   plugins: [
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({ // <-- key to reducing React's size
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: true
+      }
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: './template/index.html',
