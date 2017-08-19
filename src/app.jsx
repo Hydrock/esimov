@@ -35,10 +35,14 @@ class App extends Component {
         text: 'контакты'
       }
     ]
+    const appStyle = {
+      overflow: 'hidden',
+      position: 'relative'
+    };
     return (
       <Provider store={store}>
         <Router>
-          <div className='app'>
+          <div className='app' style={appStyle}>
             <MainSlider/>
             <Logo/>
             <MainContainer/>
