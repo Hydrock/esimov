@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import style from './style.scss'
-import img from '@src/assets/img/other/title.png'
-//import storyImg from '@src/assets/img/other/story.jpg'
 import overlayImg from '@src/assets/img/other/black_overlay.png'
+import CustomLink from '@src/components/common/custom-link'
+
+import * as actions from '@src/actions/index.js'
 
 export default class Card extends Component {
+  setActiveStory = () => {
+    const { storyId } = this.props
+    actions.setLoad('loading')
+    actions.setPath(`/story/${storyId}`)
+  }
   render() {
-    //console.log(this.props)
-    const generalImage = this.props.generalImage
-    const shortText = this.props.shortText
+    const { generalImage, shortText, storyLogo } = this.props
     return (
-      <div className={style.card}>
+      <div className={style.card} onClick={this.setActiveStory}>
         <div className={style.cardImageWrapper}>
           <img
             src={generalImage}
@@ -23,7 +27,7 @@ export default class Card extends Component {
             alt=''
           />
           <img
-            src={img}
+            src={storyLogo}
             className={style.cardTitleImage}
             alt=''
           />

@@ -37,13 +37,13 @@ class App extends Component {
     ]
     const appStyle = {
       overflow: 'hidden',
-      position: 'relative'
+      position: 'relative',
+      height: '100vh'
     };
     return (
       <Provider store={store}>
         <Router>
           <div className='app' style={appStyle}>
-            <MainSlider/>
             <Logo/>
             <MainContainer/>
             <MainMenu items={menuItems} />
