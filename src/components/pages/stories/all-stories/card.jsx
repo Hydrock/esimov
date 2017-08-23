@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import style from './style.scss'
 import img from '@src/assets/img/other/title.png'
-import storyImg from '@src/assets/img/other/story.jpg'
+//import storyImg from '@src/assets/img/other/story.jpg'
 import overlayImg from '@src/assets/img/other/black_overlay.png'
 
 export default class Card extends Component {
   render() {
+    //console.log(this.props)
+    const generalImage = this.props.generalImage
+    const shortText = this.props.shortText
     return (
       <div className={style.card}>
         <div className={style.cardImageWrapper}>
           <img
-            src={storyImg}
+            src={generalImage}
             className={style.cardImage}
             alt=''
           />
@@ -26,7 +29,7 @@ export default class Card extends Component {
           />
         </div>
         <div className={style.cardText}>
-          Благодаря самому известному фотографу Оренбурга- сыну ветров, все чаще появляются спящие люди на улицах города. Свободные от стереотипов и всего остального мира они сами выбирают где, и когда им спать
+          {shortText}
         </div>
       </div>
     );
