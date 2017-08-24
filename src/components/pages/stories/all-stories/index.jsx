@@ -12,6 +12,7 @@ export default class AllStories extends Component {
   }
 
   renderCards() {
+    console.log(this.props)
     var data = this.props.stories && this.props.stories.stories && this.props.stories.stories.data || []
     var result = data.map(function(item, i) {
       return (
