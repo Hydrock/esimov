@@ -7,7 +7,8 @@ import MainContainer from '@src/components/main-container'
 import MainSlider from '@src/components/main-slider'
 import Curtain from '@src/containers/curtain'
 import MobileMenuButton from '@src/containers/mobile-menu-button'
-import { BrowserRouter as Router } from 'react-router-dom'
+//import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from '@src/store.js'
 
@@ -35,11 +36,15 @@ class App extends Component {
         text: 'контакты'
       }
     ]
+    const appStyle = {
+      overflow: 'hidden',
+      position: 'relative',
+      height: '100vh'
+    };
     return (
       <Provider store={store}>
         <Router>
-          <div className='app'>
-            <MainSlider/>
+          <div className='app' style={appStyle}>
             <Logo/>
             <MainContainer/>
             <MainMenu items={menuItems} />

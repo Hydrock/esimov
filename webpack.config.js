@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var DashboardPlugin = require('webpack-dashboard/plugin')
+var ManifestPlugin = require('webpack-manifest-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const autoprefixer = require('autoprefixer');
 require("babel-polyfill");
@@ -207,7 +209,9 @@ var build = {
     contentBase: path.join(__dirname, "dist"),
     historyApiFallback: true,
     compress: true,
-    port: 9000
+    port: 9000,
+    bonjour: true,
+    host: "192.168.0.24"
   },
   plugins: [
     new webpack.NoErrorsPlugin(),
@@ -226,7 +230,16 @@ var build = {
       inject: true,
       template: './template/index.html',
     }),
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("styles.css"),
+    new ManifestPlugin({
+      fileName: 'manifest.json',
+      basePath: '/',
+      seed: {
+        name: 'Esimov - Website',
+        short_name: "Esimov",
+        display: "standalone"
+      }
+    })
   ]
 };
 
