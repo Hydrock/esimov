@@ -211,7 +211,7 @@ var build = {
     compress: true,
     port: 9000,
     bonjour: true,
-    host: "192.168.0.24"
+    host: "localhost"
   },
   plugins: [
     new webpack.NoErrorsPlugin(),

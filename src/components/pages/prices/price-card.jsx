@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import style from './style.scss'
 
-import blotchImg from  '@src/assets/img/blotch/blotch-1.jpg'
+import blotchImg from  '@src/assets/img/blotch/blotch-w.png'
 import Img from  '@src/assets/img/other/img-1.jpg'
 
 export default class PriceCard extends Component {
@@ -14,9 +14,12 @@ export default class PriceCard extends Component {
   
     return (
       <div className={style.priceCard}>
-        <div className={style.priceCardPhotoWrap}>
-          <div className={style.priceCardPhoto} style={styleBox}>
-          </div>
+        <div className={style.imgContainer}>
+          <img src={Img} alt="img" />
+          <img src={blotchImg} alt="blotch" className={style.blotch} />
+        </div>
+        <div className={style.textContainer}>
+          
         </div>
       </div>
     )

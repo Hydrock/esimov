@@ -7,14 +7,43 @@
   align-items: center;
 }
 
-.table {
-  color: white;
-  border: 1px solid white;
-  border-collapse: collapse;
+
+.contentContainer {
+
 }
 
-.tableTH,
-.tableTD {
-  border: 1px solid white;
-  padding: 5px;
+.priceCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.blotch {
+  mix-blend-mode: darken;
+}
+
+.imgContainer {
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+  position: relative;
+  right: -40px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.textContainer {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  border-radius: 5px;
+  z-index: 1;
+  background-color: #000;
+  box-shadow: 0 8px 57px 23px hsla(0,0%,100%,0.1)
 }
